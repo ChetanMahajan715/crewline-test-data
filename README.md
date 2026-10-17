@@ -1,6 +1,6 @@
-# agent-harness test data
+# Crewline test data
 
-Ready-made test inputs for a multi-agent harness: one small Python repo with planted bugs, and one support inbox of short messages. Each comes with an answer file, so you can check results yourself.
+Ready-made test inputs for [Crewline](https://github.com/ChetanMahajan715/crewline), a small multi-agent harness: one Python repo with planted bugs, and one support inbox of short messages. Each comes with an answer file, so you can check results yourself.
 
 Everything here is made up. There is no real code from anyone, and no personal data.
 
@@ -53,10 +53,12 @@ Everything here is made up. There is no real code from anyone, and no personal d
 
 ## How to use it
 
-1. Clone this repo:
-   ```
-   git clone https://github.com/ChetanMahajan715/agent-harness-test-data.git
-   ```
-2. Copy `buggy_python_repo/` and/or `support_inbox/` into your harness's task folder.
-3. Point the harness at that folder and run it.
-4. Compare its output with the answer files and the tables above.
+**With Crewline:** from inside your `crewline` folder, clone this repo into the sandbox:
+```
+git clone https://github.com/ChetanMahajan715/crewline-test-data.git sandbox\test-data
+```
+Crewline's `tasks/tasks.json` already points at it: `python run.py --task myrepo` runs the code review, and `python run.py --task inbox` runs the triage. Compare the output with the answer files and the tables above.
+
+**With any other harness:** clone it anywhere, point your harness at `buggy_python_repo/` or `support_inbox/`, and compare the output the same way.
+
+Keep the answer files out of the folder the agents read, so they can't see the answers.
